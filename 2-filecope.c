@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	}
 	if((from = fopen(argv[1],"r"))==NULL)
 		err_exit(argv[1]);
-	if((to = fopen(argv[2],"a"))==NULL)
+	if((to = fopen(argv[2],"w"))==NULL)
 		err_exit(argv[2]);
 	while((n = fread(buf,sizeof(char),BUFSIZ,from))>0)
 		fwrite(buf,sizeof(char),n,to);
